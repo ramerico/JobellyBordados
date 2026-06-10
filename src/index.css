@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 0 65% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 0 73% 41%;
+    --primary-light: 0 100% 66%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 62%;
+
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 65% 51%;
+
+    --radius: 0.75rem;
+
+    --whatsapp: 142 70% 49%;
+    --whatsapp-dark: 161 56% 39%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-center mb-16 relative;
+  }
+
+  .section-heading h2 {
+    @apply text-4xl md:text-5xl font-bold uppercase tracking-wider inline-block relative;
+  }
+
+  .section-heading h2::after {
+    content: '';
+    @apply absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  }
+
+  .btn-primary {
+    @apply inline-block px-8 py-4 rounded-full font-semibold text-primary-foreground tracking-wide relative overflow-hidden z-[1] transition-all duration-400;
+    background-color: hsl(var(--primary));
+    box-shadow: 0 4px 15px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary-dark));
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-outline-white {
+    @apply inline-block px-8 py-4 rounded-full font-semibold tracking-wide border-2 border-primary-foreground text-primary-foreground transition-all duration-300;
+  }
+
+  .btn-outline-white:hover {
+    @apply bg-primary-foreground;
+    color: hsl(var(--accent));
+    transform: translateY(-5px);
+  }
+
+  .btn-whatsapp {
+    @apply flex items-center justify-center gap-3 w-full border-none py-4 rounded-xl font-semibold text-lg cursor-pointer transition-all duration-300 text-primary-foreground;
+    background-color: hsl(var(--whatsapp));
+  }
+
+  .btn-whatsapp:hover {
+    background-color: hsl(var(--whatsapp-dark));
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px hsl(var(--whatsapp) / 0.3);
+  }
+
+  .feature-card {
+    @apply flex items-start gap-5 p-4 rounded-xl transition-all duration-300;
+    background: hsl(var(--background));
+    box-shadow: 0 5px 15px hsl(var(--accent) / 0.05);
+  }
+
+  .feature-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px hsl(var(--accent) / 0.1);
+  }
+
+  .icon-circle {
+    @apply w-16 h-16 rounded-full flex items-center justify-center text-2xl flex-shrink-0 text-primary-foreground;
+    background-color: hsl(var(--primary));
+  }
+
+  .icon-circle-sm {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-xl flex-shrink-0 text-primary-foreground;
+    background-color: hsl(var(--primary));
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
