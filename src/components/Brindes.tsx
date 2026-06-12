@@ -8,6 +8,8 @@ import canetaStylus from "@/assets/brinde-caneta-stylus.jpg";
 import canetaSlim from "@/assets/brinde-caneta-slim.jpg";
 import canetaSoftTouch from "@/assets/brinde-caneta-softtouch.jpg";
 import canetaTransparente from "@/assets/brinde-caneta-transparente.jpg";
+import canetaMetalColors from "@/assets/brinde-caneta-metal-colors.jpg";
+import canetaSoftTouchColors from "@/assets/brinde-caneta-softtouch-colors.jpg";
 
 import mochilaColorida from "@/assets/brinde-mochila-colorida.jpg";
 import mochilaUsb from "@/assets/brinde-mochila-usb.jpg";
@@ -15,19 +17,28 @@ import mochilaExecutiva from "@/assets/brinde-mochila-executiva.jpg";
 import mochilaPreta from "@/assets/brinde-mochila-preta.jpg";
 import mochilaPreta2 from "@/assets/brinde-mochila-preta2.jpg";
 import mochilaPremium from "@/assets/brinde-mochila-premium.jpg";
+import mochilaBolsaSport from "@/assets/brinde-mochila-bolsa-sport.jpg";
 
 import cadernoPena from "@/assets/brinde-caderno-caneta.jpg";
 import cadernoPena2 from "@/assets/brinde-caderno-eco.jpg";
 import blocoNotas from "@/assets/brinde-bloco-notas.jpg";
+import kitCadernoCaneta from "@/assets/brinde-kit-caderno-caneta.jpg";
 
 import garrafaTermica from "@/assets/brinde-garrafa-termica.jpg";
 import bolsaViagem from "@/assets/brinde-bolsa-viagem.jpg";
 import sacolaCores from "@/assets/brinde-sacola-cores.jpg";
 import sacolaAlgodao from "@/assets/brinde-sacola-algodao.jpg";
+import garrafaInoxColors from "@/assets/brinde-garrafa-inox-colors.jpg";
+import garrafaTermicaHandle from "@/assets/brinde-garrafa-termica-handle.jpg";
+import garrafaSportWide from "@/assets/brinde-garrafa-sport-wide.jpg";
+import garrafaInoxSlim from "@/assets/brinde-garrafa-inox-slim.jpg";
+import garrafaSqueezeColors from "@/assets/brinde-garrafa-squeeze-colors.jpg";
+import garrafaWideMouth from "@/assets/brinde-garrafa-wide-mouth.jpg";
 
-type Category = "todos" | "canetas" | "mochilas" | "cadernos" | "outros";
+type Category = "todos" | "canetas" | "mochilas" | "cadernos" | "garrafas" | "outros";
 
 const allItems = [
+  // Canetas
   { cat: "canetas" as Category, img: canetaAzul, title: "Caneta Plástica Premium", desc: "Corpo translúcido com clip metálico" },
   { cat: "canetas" as Category, img: canetaSuporte, title: "Caneta com Suporte Celular", desc: "3 em 1: escreve, stylus e apoio para celular" },
   { cat: "canetas" as Category, img: canetaMetal, title: "Caneta Metálica Executiva", desc: "Acabamento brilhante em diversas cores" },
@@ -35,16 +46,30 @@ const allItems = [
   { cat: "canetas" as Category, img: canetaSlim, title: "Caneta Slim Bicolor", desc: "Design fino com clip preto e corpo colorido" },
   { cat: "canetas" as Category, img: canetaSoftTouch, title: "Caneta Soft Touch", desc: "Acabamento suave com ponta stylus" },
   { cat: "canetas" as Category, img: canetaTransparente, title: "Caneta Transparente Grip", desc: "Corpo cristal com grip acanalado" },
+  { cat: "canetas" as Category, img: canetaMetalColors, title: "Caneta Metálica Multicolor", desc: "Alumínio com acabamento fosco, 9 cores disponíveis" },
+  { cat: "canetas" as Category, img: canetaSoftTouchColors, title: "Caneta Soft Touch Slim", desc: "Corpo emborrachado, clip preto, 5 cores" },
+  // Mochilas & Bolsas
   { cat: "mochilas" as Category, img: mochilaColorida, title: "Mochila Casual", desc: "Leve e resistente, disponível em 3 cores" },
   { cat: "mochilas" as Category, img: mochilaUsb, title: "Mochila com USB", desc: "Saída USB integrada para carregar dispositivos" },
   { cat: "mochilas" as Category, img: mochilaExecutiva, title: "Mochila Executiva", desc: "Acabamento couro sintético premium" },
   { cat: "mochilas" as Category, img: mochilaPreta, title: "Mochila Profissional", desc: "Múltiplos compartimentos, ideal para notebooks" },
   { cat: "mochilas" as Category, img: mochilaPreta2, title: "Mochila Corporativa Plus", desc: "Alta capacidade para uso diário" },
   { cat: "mochilas" as Category, img: mochilaPremium, title: "Mochila Premium Bicolor", desc: "Tecido + PU, alça de couro sintético" },
+  { cat: "mochilas" as Category, img: mochilaBolsaSport, title: "Kit Mochila + Bolsa Sport", desc: "Mochila preta e bolsa de viagem azul marinho" },
+  // Cadernos
   { cat: "cadernos" as Category, img: cadernoPena, title: "Caderno com Caneta", desc: "Kit caderno emborrachado + caneta inclusa" },
   { cat: "cadernos" as Category, img: cadernoPena2, title: "Caderno Ecológico", desc: "Capa kraft reciclada, espiral e caneta eco" },
   { cat: "cadernos" as Category, img: blocoNotas, title: "Bloco de Notas Colorido", desc: "Com marcadores adesivos e caneta eco" },
-  { cat: "outros" as Category, img: garrafaTermica, title: "Garrafa Térmica Inox", desc: "Mantém temperatura por até 24h, 6 cores" },
+  { cat: "cadernos" as Category, img: kitCadernoCaneta, title: "Kit Caderno Executivo", desc: "Caderno de capa dura em caixa presente com caneta" },
+  // Garrafas Térmicas
+  { cat: "garrafas" as Category, img: garrafaTermica, title: "Garrafa Térmica Inox", desc: "Mantém temperatura por até 24h, 6 cores" },
+  { cat: "garrafas" as Category, img: garrafaInoxColors, title: "Garrafa Inox Cobra", desc: "Formato slim elegante, 7 cores vibrantes" },
+  { cat: "garrafas" as Category, img: garrafaTermicaHandle, title: "Garrafa Térmica com Alça", desc: "Tampa com pegador, inox interno, 6 cores" },
+  { cat: "garrafas" as Category, img: garrafaSportWide, title: "Garrafa Sport Boca Larga", desc: "Tampa com trava e bico, 6 cores" },
+  { cat: "garrafas" as Category, img: garrafaInoxSlim, title: "Garrafa Inox Slim", desc: "Design clássico, aço inox externo, 6 cores" },
+  { cat: "garrafas" as Category, img: garrafaSqueezeColors, title: "Squeeze Inox Pastel", desc: "Cores suaves e modernas, 7 opções" },
+  { cat: "garrafas" as Category, img: garrafaWideMouth, title: "Squeeze Boca Larga Wide", desc: "Tampa com alça, várias cores vibrantes" },
+  // Outros
   { cat: "outros" as Category, img: bolsaViagem, title: "Bolsa de Viagem", desc: "Espaçosa, leve e resistente, 3 cores" },
   { cat: "outros" as Category, img: sacolaCores, title: "Sacola Nylon Colorida", desc: "Cordão duplo, 8 cores vibrantes" },
   { cat: "outros" as Category, img: sacolaAlgodao, title: "Sacola Algodão + Cortiça", desc: "Sustentável, base em cortiça natural" },
@@ -55,7 +80,8 @@ const categories: { key: Category; label: string; emoji: string }[] = [
   { key: "canetas", label: "Canetas", emoji: "✒️" },
   { key: "mochilas", label: "Mochilas & Bolsas", emoji: "🎒" },
   { key: "cadernos", label: "Cadernos", emoji: "📓" },
-  { key: "outros", label: "Garrafas & Sacolas", emoji: "🫙" },
+  { key: "garrafas", label: "Garrafas Térmicas", emoji: "🧴" },
+  { key: "outros", label: "Sacolas", emoji: "🛍️" },
 ];
 
 const Brindes = () => {
